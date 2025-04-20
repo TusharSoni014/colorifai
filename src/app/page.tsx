@@ -10,8 +10,8 @@ import { useState } from "react";
 export default function Home() {
   const [mode, setMode] = useState<IChatMode>("start");
   return (
-    <div className="w-full h-dvh flex  flex-col">
-      <div className="h-[50%] w-full justify-end items-center flex flex-col gap-3.5 pb-3.5">
+    <div className="w-full h-dvh overflow-y-scroll flex  flex-col p-3">
+      <div className="h-1/2 w-full justify-end items-center flex flex-col gap-3.5 pb-3.5">
         <motion.h1
           variants={blurFadeInOut}
           initial="initial"
@@ -28,7 +28,7 @@ export default function Home() {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.3, delay: 0.2 }}
-          className="text-xl text-gray-600"
+          className="text-xl text-gray-600 text-center"
         >
           Intelligent color palettes, designed by AI,{" "}
           <span className="text-red-600">inspired by you</span>

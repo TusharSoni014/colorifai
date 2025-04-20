@@ -9,7 +9,7 @@ export default function ColorPallets({
   generatedColors: IGeneratedColors | null;
 }) {
   return (
-    <motion.div className="w-full max-w-[700px] flex justify-center items-center gap-3.5">
+    <motion.div className="w-full max-w-[800px] flex justify-center items-center gap-3.5 gap-y-10 flex-wrap">
       <AnimatePresence mode="wait">
         {Object.keys(generatedColors || {}).map((key, index) => {
           return (
@@ -29,12 +29,12 @@ export default function ColorPallets({
                 );
                 toast.success("Color copied to clipboard!");
               }}
-              className="w-full h-full min-h-[150px] rounded-lg transition-transform shadow-lg group flex justify-center items-center cursor-pointer hover:scale-110 relative"
+              className="w-[100px] h-[150px] rounded-lg transition-transform shadow-lg group flex justify-center items-center cursor-pointer hover:scale-110 relative"
             >
               <p className="text-white mix-blend-difference opacity-0 transition-all group-hover:opacity-100">
                 {generatedColors?.[key as keyof IGeneratedColors]}
               </p>
-              <p className="absolute w-full font-semibold -bottom-[30px] left-1/2 text-xs text-center -translate-x-1/2">
+              <p className="absolute w-full font-semibold -bottom-[20px] left-1/2 text-xs text-center -translate-x-1/2">
                 {key}
               </p>
             </motion.div>

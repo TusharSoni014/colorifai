@@ -73,9 +73,9 @@ export default function InputPrompt({
           GO
         </Button>
       </motion.div>
-      {/* {mode === "generated" && ( */}
-      <ColorPallets generatedColors={generatedColors} />
-      {/* )} */}
+      {mode === "generated" && (
+        <ColorPallets generatedColors={generatedColors} />
+      )}
     </>
   );
 }

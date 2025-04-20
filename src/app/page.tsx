@@ -3,7 +3,7 @@
 import InputPrompt from "@/components/InputPrompt";
 import { Button } from "@/components/ui/button";
 import { blurFadeInOut } from "@/lib/animations";
-import { IChatMode } from "@/types/input-prompt-types";
+import { IChatMode } from "@/types/types";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
@@ -37,7 +37,7 @@ export default function Home() {
 
       <div className="h-[50%] w-full items-center flex flex-col gap-3.5">
         <AnimatePresence mode="wait">
-          {mode === "start" && (
+          {mode === "start" ? (
             <motion.div
               variants={blurFadeInOut}
               initial="initial"
@@ -50,11 +50,9 @@ export default function Home() {
                 Start Using !
               </Button>
             </motion.div>
+          ) : (
+            <InputPrompt mode={mode} setMode={setMode} />
           )}
-          {mode === "generate" ||
-            (mode === "generated" && (
-              <InputPrompt mode={mode} setMode={setMode} />
-            ))}
         </AnimatePresence>
       </div>
     </div>
